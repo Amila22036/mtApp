@@ -7,6 +7,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
+import { AdminListComponent } from './admin-list/admin-list.component';
 
 
 export const firebaseConfig ={
@@ -22,6 +23,7 @@ export const firebaseConfig ={
 @NgModule({
   declarations: [
     AppComponent,
+    AdminListComponent,
  
 
   ],
