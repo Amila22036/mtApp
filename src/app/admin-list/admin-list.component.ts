@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireDatabase} from 'angularfire2/database';
-import {Observable} from 'rxjs/Observable';
+
 
 @Component({
   selector: 'admin-list',
@@ -9,16 +8,11 @@ import {Observable} from 'rxjs/Observable';
 })
 export class AdminListComponent implements OnInit {
 
-  AdminObservable : Observable<any[]>;
-  constructor(private db : AngularFireDatabase) { }
 
-  ngOnInit() {
-    this.AdminObservable = this.getAdmins('/Admin');
-    
-  }
+  constructor() { }
 
-  getAdmins(listpath):Observable<any[]>{
-    return this.db.list(listpath).valueChanges();
-  }
+  ngOnInit() { }
+
+
 
 }

@@ -11,7 +11,11 @@ import { AdminListComponent } from './admin-list/admin-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AfService } from './providers/af.service';
-
+import {AngularFirestore,AngularFirestoreModule} from 'angularfire2/firestore';
+import { AppNavbarComponent } from './app-navbar/app-navbar.component';
+import { ArticalPageComponent } from './artical-page/artical-page.component';
+import { AdminGuard } from './guards/admin.guard';
+import { SubscriberGuard } from './guards/subscriber.guard';
 
 export const firebaseConfig ={
     apiKey: "AIzaSyCr8HC0YDcfxIJJELeJ4OH2QEYIH_MxGpI",
@@ -28,6 +32,8 @@ export const firebaseConfig ={
     AppComponent,
     AdminListComponent,
     LoginPageComponent,
+    AppNavbarComponent,
+    ArticalPageComponent,
 
  
 
@@ -38,9 +44,10 @@ export const firebaseConfig ={
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFirestoreModule
   ],
-  providers: [AfService],
+  providers: [AfService,AdminGuard,SubscriberGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

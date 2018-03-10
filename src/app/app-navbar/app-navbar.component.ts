@@ -3,11 +3,12 @@ import {AfService } from '../providers/af.service';
 import {User} from '../providers/user';
 
 @Component({
-  selector: 'login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  selector: 'app-navbar',
+  templateUrl: './app-navbar.component.html',
+  styleUrls: ['./app-navbar.component.css']
 })
-export class LoginPageComponent implements OnInit {
+export class AppNavbarComponent implements OnInit {
+
   user:User;
 
   constructor(public afService:AfService) { }
@@ -15,9 +16,4 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
     this.afService.user$.subscribe(user => this.user = user);
   }
-
-  login(){
-    this.afService.loginWithGoogle();
-  }
-
 }
