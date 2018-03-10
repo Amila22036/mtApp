@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { NgModule } from '@angular/core';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -16,6 +18,9 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { ArticalPageComponent } from './artical-page/artical-page.component';
 import { AdminGuard } from './guards/admin.guard';
 import { SubscriberGuard } from './guards/subscriber.guard';
+
+import {MaterialModule} from './material.module';
+ 
 
 export const firebaseConfig ={
     apiKey: "AIzaSyCr8HC0YDcfxIJJELeJ4OH2QEYIH_MxGpI",
@@ -45,7 +50,8 @@ export const firebaseConfig ={
     AngularFireAuthModule,
     NgbModule.forRoot(),
     AppRoutingModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MaterialModule
   ],
   providers: [AfService,AdminGuard,SubscriberGuard],
   bootstrap: [AppComponent]
