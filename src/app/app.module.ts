@@ -8,6 +8,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AdminListComponent } from './admin-list/admin-list.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AfService } from './providers/af.service';
 
 
 export const firebaseConfig ={
@@ -24,6 +27,8 @@ export const firebaseConfig ={
   declarations: [
     AppComponent,
     AdminListComponent,
+    LoginPageComponent,
+
  
 
   ],
@@ -32,9 +37,10 @@ export const firebaseConfig ={
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AfService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
