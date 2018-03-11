@@ -51,7 +51,8 @@ export const firebaseConfig ={
     NgbModule.forRoot(),
     AppRoutingModule,
     AngularFirestoreModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [AfService,AdminGuard,SubscriberGuard],
   bootstrap: [AppComponent]
