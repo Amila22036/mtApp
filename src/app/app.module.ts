@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import {PopupModule} from 'ng2-opd-popup'
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -58,7 +59,8 @@ export const firebaseConfig ={
     AppRoutingModule,
     AngularFirestoreModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PopupModule.forRoot()
   ],
   providers: [AfService,AdminGuard,SubscriberGuard],
   bootstrap: [AppComponent]

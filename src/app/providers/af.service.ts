@@ -85,7 +85,7 @@ export class AfService {
          admin:false
        },
       
-       password:this.AdminPW
+       password:"12345678"
      }
 
      return userRef.set(data);

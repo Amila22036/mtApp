@@ -16,9 +16,10 @@
                  
                   <div class="card-body">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Admin Key" id='AdminPW' (keyup.enter)="PWmatch($event.target.value)">
+                      <input matInput placeholder="Admin Key"  id='AdminPW' (keyup.enter)="PWmatch($event.target.value)">
+ 
                     </mat-form-field>    
-                     
+                     <popup (confirmClick)="YourConfirmEvent()" (cancelClick)="YourCancelEvent()">Invalid Admin key</popup>
                       <button routerLink="/home" class="btn btn-primary btn-block" (click)="changeAdminkey()">Ignore</button>     
                   </div>      
                 </div>

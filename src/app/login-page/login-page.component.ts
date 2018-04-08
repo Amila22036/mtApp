@@ -3,6 +3,7 @@ import {AfService } from '../providers/af.service';
 import {User} from '../providers/user';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
+import {Popup} from 'ng2-opd-popup'
 
 @Component({
   selector: 'login-page',
@@ -17,7 +18,7 @@ export class LoginPageComponent implements OnInit {
   adminkey:boolean=true;
 
   AdminObservable : Observable<User[]>;
-  constructor(public afService:AfService, private db:AngularFireDatabase) { }
+  constructor(public afService:AfService, private db:AngularFireDatabase,private popup:Popup) { }
 
   ngOnInit() {
 
@@ -39,15 +40,29 @@ export class LoginPageComponent implements OnInit {
      console.log("Pass matched");
      this.afService.SendAdminPw(this.user,this.user.password);
      this.check=false;
-     
+     return true;
    }
    else{
      console.log("Pass Not match");
-     console.log(EnterdPW +"And"+ this.user.password)
+     console.log(EnterdPW +"And"+ this.user.password);
+     this.popup.options={
+       color:"red",
+       widthProsentage: 85,
+       confirmBtnContent: "OK",
+       animationDuration: 1,
+       animation: "bounceIn"
+     }
+     this.popup.show();
    }
 
  }
-
+ 
+ YourConfirmEvent(){
+   this.popup.hide();
+ }
+ YourCancelEvent(){
+   this.popup.hide();
+ }
  
 
  changeAdminkey(){
@@ -64,6 +79,6 @@ export class LoginPageComponent implements OnInit {
    
   }
 
-
-
 }
+
+
