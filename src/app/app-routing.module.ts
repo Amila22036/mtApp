@@ -7,12 +7,16 @@ import { AdminListComponent } from './admin-list/admin-list.component';
 import { ArticalPageComponent} from './artical-page/artical-page.component';
 import { AdminGuard } from './guards/admin.guard';
 import { SubscriberGuard } from './guards/subscriber.guard';
+import { HomePageComponent} from './home-page/home-page.component';
+import {MapPageComponent} from './map-page/map-page.component';
 
 const routers: Routes =[
     {path:' ',component:AppComponent},
     {path:'login',component:LoginPageComponent},
     {path:'admin',component:AdminListComponent,canActivate:[AdminGuard]},
-    {path:'article',component:ArticalPageComponent,canActivate:[SubscriberGuard]}
+    {path:'article',component:ArticalPageComponent,canActivate:[SubscriberGuard]},
+    {path:'home',component:HomePageComponent,canActivate:[SubscriberGuard]},
+    {path:'Map',component:MapPageComponent}
 ]
 @NgModule({
     imports:[

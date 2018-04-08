@@ -4,6 +4,7 @@ export interface User {
     displayName:string;
     photoURL:string;
     roles: Roles;
+    password:string;
 }
 
 export interface Roles{

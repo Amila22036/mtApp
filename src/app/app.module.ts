@@ -20,6 +20,9 @@ import { AdminGuard } from './guards/admin.guard';
 import { SubscriberGuard } from './guards/subscriber.guard';
 
 import {MaterialModule} from './material.module';
+import { HomePageComponent } from './home-page/home-page.component';
+import { FrontPageComponent } from './front-page/front-page.component';
+import { MapPageComponent } from './map-page/map-page.component';
  
 
 export const firebaseConfig ={
@@ -39,6 +42,9 @@ export const firebaseConfig ={
     LoginPageComponent,
     AppNavbarComponent,
     ArticalPageComponent,
+    HomePageComponent,
+    FrontPageComponent,
+    MapPageComponent,
 
  
 

@@ -1,26 +1,29 @@
 <div class="container">
+  <div *ngIf="!user">
         <div class="card card-login mx-auto mt-5">
           <div class="card-header">Login</div>
           <div class="card-body">
-           
-      
-              <div class="form-group">
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"> Remember Password</label>
+                   
+              <button  class="btn btn-primary btn-block" (click)="login()">Login with Google</button>
+                    
+          </div>      
+        </div>
+        </div>
+        <div *ngIf="user && check && adminkey">
+        <div *ngIf= "!user.roles?.admin? true:false" >
+    
+                <div class="card card-login mx-auto mt-5">
+                 
+                  <div class="card-body">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Admin Key" id='AdminPW' (keyup.enter)="PWmatch($event.target.value)">
+                    </mat-form-field>    
+                     
+                      <button routerLink="/home" class="btn btn-primary btn-block" (click)="changeAdminkey()">Ignore</button>     
+                  </div>      
+                </div>
                 </div>
               </div>
-              
-              <button class="btn btn-primary btn-block" (click)="login()">Login with Google</button>
-      
             
-            <div class="text-center">
-              <a class="d-block small" >Forgot Password?</a>
-            </div>
-          </div>
-      
-          
-      
-        </div>
+     </div>
 
-      </div>
