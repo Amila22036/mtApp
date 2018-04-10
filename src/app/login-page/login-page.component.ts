@@ -40,7 +40,7 @@ export class LoginPageComponent implements OnInit {
      console.log("Pass matched");
      this.afService.SendAdminPw(this.user,this.user.password);
      this.check=false;
-     return true;
+  
    }
    else{
      console.log("Pass Not match");

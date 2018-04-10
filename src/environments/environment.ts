@@ -13,5 +13,7 @@ export const environment = {
     storageBucket: "pdmpark-22036.appspot.com",
     messagingSenderId: "105445754986"
 
-  }
+  },
+
+  googleMapsKey: 'AIzaSyCiTBXSU8SXohHlhw8nOX0bmbvXMvI1mBA' 
 };

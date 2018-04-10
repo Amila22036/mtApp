@@ -6,7 +6,8 @@ import { NgModule } from '@angular/core';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
-import {PopupModule} from 'ng2-opd-popup'
+import {PopupModule} from 'ng2-opd-popup';
+import {AgmCoreModule} from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -60,7 +61,10 @@ export const firebaseConfig ={
     AngularFirestoreModule,
     MaterialModule,
     BrowserAnimationsModule,
-    PopupModule.forRoot()
+    PopupModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey:environment.googleMapsKey
+    })
   ],
   providers: [AfService,AdminGuard,SubscriberGuard],
   bootstrap: [AppComponent]
