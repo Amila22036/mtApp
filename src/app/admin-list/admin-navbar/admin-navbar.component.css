@@ -1,0 +1,10 @@
+.example-spacer{
+    flex:2 2 auto;
+}
+.example-icon{
+    padding: 0 14px;
+}
+.profileImage{
+    height: 30px;
+    width : 30px;
+}

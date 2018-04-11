@@ -25,6 +25,7 @@ import {MaterialModule} from './material.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { MapPageComponent } from './map-page/map-page.component';
+import { AdminNavbarComponent } from './admin-list/admin-navbar/admin-navbar.component';
  
 
 export const firebaseConfig ={
@@ -47,6 +48,7 @@ export const firebaseConfig ={
     HomePageComponent,
     FrontPageComponent,
     MapPageComponent,
+    AdminNavbarComponent,
 
  
 
