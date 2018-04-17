@@ -1,0 +1,18 @@
+
+
+
+    
+      <div class="chatbox">
+          <div class="chatlogs">
+ 
+                <div class="message"  *ngFor="let message of messages | async">
+                <div class="user-photo"></div>
+                 <p [ngClass]="{'from': message.sentby === 'bot','to': message.sentby === 'user'}">  {{ message.content }}</p>
+                </div>
+                          
+          </div>
+          <div class="chat-form">
+            <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" placeholder="Ask Anything about Easy Travel"/>
+            <button (click)="sendMessage()">Send</button>
+          </div>
+        </div>

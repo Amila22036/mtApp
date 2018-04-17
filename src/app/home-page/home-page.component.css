@@ -2,7 +2,7 @@
 
 .image{
     height:40em; background-size:cover; width:auto;
-    background-image:url('http://images.all-free-download.com/images/graphiclarge/nostalgic_blue_background_06_hd_pictures_169782.jpg');
+    background-image:url('https://firebasestorage.googleapis.com/v0/b/pdmpark-22036.appspot.com/o/05c04c723330d5925be322af7965672b-2.jpg?alt=media&token=f69f8033-9d7a-47c7-93f4-d145037cc35f');
     background-position:50% 50%;
   }
 
@@ -10,10 +10,15 @@
     font-size: 55px;
     line-height: 70px;
     font-weight: 300;
-    font-family: 'Roboto Slab', serif;
-  color: #ffd1d1;
+    font-family: 'Travelling';
+  color: #ed930b;
   }
-
+p{
+  line-height: 50px;
+  font-weight: 300;
+  font-family: 'Travelling';
+  color: #ed930b;
+}
   footer {
     background-color: black;
   }

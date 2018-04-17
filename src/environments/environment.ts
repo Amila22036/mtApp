@@ -15,5 +15,8 @@ export const environment = {
 
   },
 
-  googleMapsKey: 'AIzaSyCiTBXSU8SXohHlhw8nOX0bmbvXMvI1mBA' 
+  googleMapsKey: 'AIzaSyCiTBXSU8SXohHlhw8nOX0bmbvXMvI1mBA',
+  dialogflow:{
+    EasyTravelAssistant:'a8780afe30a7493284d6fe4080bdd6d4'
+  }
 };

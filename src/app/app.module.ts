@@ -8,6 +8,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {PopupModule} from 'ng2-opd-popup';
 import {AgmCoreModule} from '@agm/core';
+import {ChatModule} from './chat/chat.module'
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -66,7 +67,8 @@ export const firebaseConfig ={
     PopupModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey:environment.googleMapsKey
-    })
+    }),
+    ChatModule
   ],
   providers: [AfService,AdminGuard,SubscriberGuard],
   bootstrap: [AppComponent]
