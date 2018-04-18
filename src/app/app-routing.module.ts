@@ -9,14 +9,16 @@ import { AdminGuard } from './guards/admin.guard';
 import { SubscriberGuard } from './guards/subscriber.guard';
 import { HomePageComponent} from './home-page/home-page.component';
 import {MapPageComponent} from './map-page/map-page.component';
+import {ManageUsersComponent} from './admin-list/manage-users/manage-users.component';
 
 const routers: Routes =[
     {path:' ',component:AppComponent},
     {path:'login',component:LoginPageComponent},
     {path:'admin',component:AdminListComponent,canActivate:[AdminGuard]},
     {path:'article',component:ArticalPageComponent,canActivate:[SubscriberGuard]},
-    {path:'home',component:HomePageComponent,canActivate:[SubscriberGuard]},
-    {path:'Map',component:MapPageComponent}
+    {path:'home',component:HomePageComponent},
+    {path:'Map',component:MapPageComponent},
+    {path:'Manage-users',component:ManageUsersComponent,canActivate:[AdminGuard]}
 ]
 @NgModule({
     imports:[

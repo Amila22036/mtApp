@@ -9,12 +9,15 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {PopupModule} from 'ng2-opd-popup';
 import {AgmCoreModule} from '@agm/core';
 import {ChatModule} from './chat/chat.module'
+import { AppRoutingModule } from './app-routing.module';
+import {FormsModule} from '@angular/forms';
+import {ToastrModule} from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AdminListComponent } from './admin-list/admin-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { AppRoutingModule } from './app-routing.module';
+
 import { AfService } from './providers/af.service';
 import {AngularFirestore,AngularFirestoreModule} from 'angularfire2/firestore';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
@@ -27,7 +30,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { MapPageComponent } from './map-page/map-page.component';
 import { AdminNavbarComponent } from './admin-list/admin-navbar/admin-navbar.component';
- 
+import { ManageUsersComponent } from './admin-list/manage-users/manage-users.component';
+import { UsersListComponent } from './admin-list/manage-users/users-list/users-list.component';
+import { UserComponent } from './admin-list/manage-users/user/user.component';
+
 
 export const firebaseConfig ={
     apiKey: "AIzaSyCr8HC0YDcfxIJJELeJ4OH2QEYIH_MxGpI",
@@ -50,6 +56,10 @@ export const firebaseConfig ={
     FrontPageComponent,
     MapPageComponent,
     AdminNavbarComponent,
+    ManageUsersComponent,
+    UsersListComponent,
+    UserComponent
+
 
  
 
@@ -68,7 +78,9 @@ export const firebaseConfig ={
     AgmCoreModule.forRoot({
       apiKey:environment.googleMapsKey
     }),
-    ChatModule
+    ChatModule,
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [AfService,AdminGuard,SubscriberGuard],
   bootstrap: [AppComponent]

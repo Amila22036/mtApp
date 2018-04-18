@@ -1,11 +1,12 @@
+<div class="backGround">
 <div class="container">
-  <div *ngIf="!user">
+  <div *ngIf="!user && adminkey">
         <div class="card card-login mx-auto mt-5">
           <div class="card-header">Login</div>
           <div class="card-body">
                    
               <button  class="btn btn-primary btn-block" (click)="login()">Login with Google</button>
-                    
+              <button routerLink="/home" class="btn btn-primary btn-block" (click)="changeAdminkey()">Ignore</button>     
           </div>      
         </div>
         </div>
@@ -27,4 +28,4 @@
               </div>
             
      </div>
-
+</div>
