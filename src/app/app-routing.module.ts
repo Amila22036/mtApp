@@ -10,6 +10,8 @@ import { SubscriberGuard } from './guards/subscriber.guard';
 import { HomePageComponent} from './home-page/home-page.component';
 import {MapPageComponent} from './map-page/map-page.component';
 import {ManageUsersComponent} from './admin-list/manage-users/manage-users.component';
+import  {AdminMapComponent} from './admin-list/admin-map/admin-map.component';
+import { ManageVendorsComponent } from './admin-list/manage-vendors/manage-vendors.component';
 
 const routers: Routes =[
     {path:' ',component:AppComponent},
@@ -18,7 +20,9 @@ const routers: Routes =[
     {path:'article',component:ArticalPageComponent,canActivate:[SubscriberGuard]},
     {path:'home',component:HomePageComponent},
     {path:'Map',component:MapPageComponent},
-    {path:'Manage-users',component:ManageUsersComponent,canActivate:[AdminGuard]}
+    {path:'Manage-users',component:ManageUsersComponent,canActivate:[AdminGuard]},
+    {path:'Admin-map',component:AdminMapComponent,canActivate:[AdminGuard]},
+    {path:'Manage-vendors',component:ManageVendorsComponent,canActivate:[AdminGuard]}
 ]
 @NgModule({
     imports:[

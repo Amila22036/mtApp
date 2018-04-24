@@ -6,12 +6,14 @@ import { NgModule } from '@angular/core';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireDatabase} from 'angularfire2/database-deprecated';
 import {PopupModule} from 'ng2-opd-popup';
 import {AgmCoreModule} from '@agm/core';
 import {ChatModule} from './chat/chat.module'
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
+
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -24,6 +26,7 @@ import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { ArticalPageComponent } from './artical-page/artical-page.component';
 import { AdminGuard } from './guards/admin.guard';
 import { SubscriberGuard } from './guards/subscriber.guard';
+import  {AdminmapService} from './admin-list/admin-map/adminmap.service';
 
 import {MaterialModule} from './material.module';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -33,6 +36,10 @@ import { AdminNavbarComponent } from './admin-list/admin-navbar/admin-navbar.com
 import { ManageUsersComponent } from './admin-list/manage-users/manage-users.component';
 import { UsersListComponent } from './admin-list/manage-users/users-list/users-list.component';
 import { UserComponent } from './admin-list/manage-users/user/user.component';
+import { AdminMapComponent } from './admin-list/admin-map/admin-map.component';
+import { ManageVendorsComponent } from './admin-list/manage-vendors/manage-vendors.component';
+import { VendorComponent } from './admin-list/manage-vendors/vendor/vendor.component';
+import { VendorsListComponent } from './admin-list/manage-vendors/vendors-list/vendors-list.component';
 
 
 export const firebaseConfig ={
@@ -58,7 +65,11 @@ export const firebaseConfig ={
     AdminNavbarComponent,
     ManageUsersComponent,
     UsersListComponent,
-    UserComponent
+    UserComponent,
+    AdminMapComponent,
+    ManageVendorsComponent,
+    VendorComponent,
+    VendorsListComponent
 
 
  
@@ -82,7 +93,7 @@ export const firebaseConfig ={
     FormsModule,
     ToastrModule.forRoot()
   ],
-  providers: [AfService,AdminGuard,SubscriberGuard],
+  providers: [AfService,AdminGuard,SubscriberGuard,AdminmapService,AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -7,7 +7,7 @@ import {ToastrService} from 'ngx-toastr';
   selector: 'user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
-  providers:[UsersService]
+ 
 })
 export class UserComponent implements OnInit {
 
@@ -20,16 +20,23 @@ export class UserComponent implements OnInit {
   }
 
   onSubmit(userForm:NgForm){
-      this.userService.insertUser(userForm.value);
+    if(userForm.value.$key == null)
+    {
+       this.userService.insertUser(userForm.value);
+       this.toastr.success('Submitted Successfully','User Register');
+    }
+    else
+    {
+      this.userService.updateUser(userForm.value);
+      this.toastr.success('Updated Successfully','User Register');
+    }
       this.resetForm(userForm);
-      this.toastr.success('Submitted Successfully','User Register');
+      
   }
 
   resetForm(userForm?:NgForm){
     if(userForm != null)
-    {
       userForm.reset();
-    }
       this.userService.selectedUser={
         $key:null,
         FirstName:'',
@@ -38,4 +45,5 @@ export class UserComponent implements OnInit {
         PhoneNumber:0
       }
   }
+
 }

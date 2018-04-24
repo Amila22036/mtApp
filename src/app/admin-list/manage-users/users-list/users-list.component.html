@@ -1,3 +1,24 @@
-<p>
-  users-list works!
-</p>
+<h6 class="text-center">Easy travel Users</h6>
+<table class="table table-sm table-hover">
+ <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+  
+  </tr>
+    <tr *ngFor="let User of userList">
+        <td>{{User.FirstName}}</td>
+        <td>{{User.LastName}}</td>
+      <td>{{User.Email}}</td>
+      <td>{{User.PhoneNumber}}</td>
+      <td>
+        <a class="btn" (click)="onEdit(User)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn" (click)="onDelete(User.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+        </td>
+    </tr>
+</table>

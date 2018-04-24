@@ -16,8 +16,8 @@ export class UsersService {
 
   insertUser(user : User){
     this.userList.push({
-      FName :user.FirstName,
-      LName :user.LastName,
+      FirstName :user.FirstName,
+      LastName :user.LastName,
       Email :user.Email,
       PhoneNumber :user.PhoneNumber
     });
@@ -25,8 +25,8 @@ export class UsersService {
 
    updateUser(user : User){
      this.userList.update(user.$key,{
-       FName : user.FirstName,
-       LName : user.LastName,
+       FirstName : user.FirstName,
+       LastName : user.LastName,
        Email : user.Email,
        PhoneNumber : user.PhoneNumber
      });
