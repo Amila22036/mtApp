@@ -9,6 +9,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class VendorComponent implements OnInit {
   VendorNIC = new FormControl();
+ 
   constructor(private vendorService : VendorsService,private toastr:ToastrService) {
     
    }
@@ -17,6 +18,7 @@ export class VendorComponent implements OnInit {
 
   ngOnInit() {
     this.vendorService.getData();
+   
     this.resetForm();
    
   }
@@ -24,11 +26,13 @@ export class VendorComponent implements OnInit {
   onSubmit(vendorForm:NgForm){
     if(vendorForm.value.$key == null)
     {
+  
        this.vendorService.insertUser(vendorForm.value);
        this.toastr.success('Submitted Successfully','User Register');
     }
     else
     {
+ 
       this.vendorService.updateUser(vendorForm.value);
       this.toastr.success('Updated Successfully','User Register');
     }

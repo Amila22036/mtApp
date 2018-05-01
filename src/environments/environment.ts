@@ -22,4 +22,5 @@ export const environment = {
   mapbox: {
     accessToken: 'pk.eyJ1IjoiYW1pbGEyMjAzNiIsImEiOiJjamc2M291b3kycnJsMndxcDhtZXdhaDlnIn0.byD49qq7-UMzR6XI6-gsww'
   }
+  
 };

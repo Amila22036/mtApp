@@ -12,7 +12,7 @@ import {ToastrService} from 'ngx-toastr';
 export class VendorsListComponent implements OnInit {
 
   VendorList : Vendor[];
-
+  btnText:string;
   constructor(private vendorService: VendorsService,private toastr:ToastrService) { }
 
   ngOnInit() {
@@ -28,6 +28,7 @@ export class VendorsListComponent implements OnInit {
   }
 
   onEdit(Vendor: Vendor){
+ 
     this.vendorService.selectedUser= Object.assign({},Vendor);
       console.log(Vendor);
   }

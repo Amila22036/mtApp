@@ -27,6 +27,7 @@ import { ArticalPageComponent } from './artical-page/artical-page.component';
 import { AdminGuard } from './guards/admin.guard';
 import { SubscriberGuard } from './guards/subscriber.guard';
 import  {AdminmapService} from './admin-list/admin-map/adminmap.service';
+import {GeoService} from './providers/geo.service';
 
 import {MaterialModule} from './material.module';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -40,6 +41,7 @@ import { AdminMapComponent } from './admin-list/admin-map/admin-map.component';
 import { ManageVendorsComponent } from './admin-list/manage-vendors/manage-vendors.component';
 import { VendorComponent } from './admin-list/manage-vendors/vendor/vendor.component';
 import { VendorsListComponent } from './admin-list/manage-vendors/vendors-list/vendors-list.component';
+import { ManageAdminsComponent } from './admin-list/manage-admins/manage-admins.component';
 
 
 export const firebaseConfig ={
@@ -69,7 +71,8 @@ export const firebaseConfig ={
     AdminMapComponent,
     ManageVendorsComponent,
     VendorComponent,
-    VendorsListComponent
+    VendorsListComponent,
+    ManageAdminsComponent
 
 
  
@@ -93,7 +96,7 @@ export const firebaseConfig ={
     FormsModule,
     ToastrModule.forRoot()
   ],
-  providers: [AfService,AdminGuard,SubscriberGuard,AdminmapService,AngularFireDatabase],
+  providers: [AfService,AdminGuard,SubscriberGuard,AdminmapService,AngularFireDatabase,GeoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

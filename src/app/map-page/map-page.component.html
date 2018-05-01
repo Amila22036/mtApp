@@ -1,3 +1,10 @@
+
+
+<div *ngFor="let marker of markers">
+  <h4>{{marker.location[0]}}</h4>
+  <h1>23233</h1>
+
+  </div>
 <div *ngIf="lat && lng">
     <agm-map [latitude]="lat" [longitude]="lng">
        
@@ -11,7 +18,28 @@
           </agm-info-window>
         
         </agm-marker>
+
+        <agm-marker  [latitude]=7.287357319550594 [longitude]=80.64547332956408  [iconUrl]="icon">
+          <agm-info-window>
+            <h3><strong>Location details</strong></h3>
+            <p>You are  kilometers from this point</p>
+          </agm-info-window>
+
+          </agm-marker>
+          <agm-marker  *ngFor="let marker of markers" [latitude]="marker.location[0]" [longitude]="marker.location[1]"  [iconUrl]="icon">
+              <agm-info-window>
+                <h3><strong>Location details</strong></h3>
+                <p>You are  kilometers from this point</p>
+              </agm-info-window>
     
+              </agm-marker>
+          <agm-marker  [latitude]="latt" [longitude]="lngg"  [iconUrl]="icon">
+            <agm-info-window>
+              <h3><strong>Location details</strong></h3>
+              <p>You are  kilometers from this point</p>
+            </agm-info-window>
+  
+            </agm-marker>
       </agm-map>
 
 </div>

@@ -7,6 +7,7 @@ import { Vendor } from './vendors.model';
 export class VendorsService {
   VendorList: AngularFireList<any>;
   selectedUser: Vendor = new Vendor();
+
   constructor(private firebase:AngularFireDatabase) { }
 
   getData(){
@@ -34,6 +35,7 @@ export class VendorsService {
       Email : vendor.Email,
       Password : vendor.Password
      });
+     
    }
 
    deleteUser($key:string){
