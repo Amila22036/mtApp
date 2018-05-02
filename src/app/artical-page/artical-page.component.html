@@ -1,10 +1,10 @@
 <ul>
-    <div *ngFor="let Admin of AdminObservable | async">
+    <div *ngFor="let ParkingPlaces of AdminObservable | async">
         <h3>
-          {{Admin.Name}}
+          {{ParkingPlaces.longitude}}
         </h3>
         <p>
-          {{Admin.Email}}
+          {{ParkingPlaces.latitude}}
           </p>
     </div>
   </ul>

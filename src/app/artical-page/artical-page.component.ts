@@ -13,7 +13,7 @@ export class ArticalPageComponent implements OnInit {
   constructor(private db : AngularFireDatabase) { }
 
   ngOnInit() {
-    this.AdminObservable = this.getAdmins('/Admin');
+    this.AdminObservable = this.getAdmins('/ParkingPlaces');
     
   }
 

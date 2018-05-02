@@ -1,4 +1,4 @@
-export class Vendor {
+export class Vendors {
     $key:string;
     FirstName :string;
     LastName:string;

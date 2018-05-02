@@ -19,27 +19,24 @@
         
         </agm-marker>
 
-        <agm-marker  [latitude]=7.287357319550594 [longitude]=80.64547332956408  [iconUrl]="icon">
-          <agm-info-window>
-            <h3><strong>Location details</strong></h3>
-            <p>You are  kilometers from this point</p>
-          </agm-info-window>
+ 
 
-          </agm-marker>
-          <agm-marker  *ngFor="let marker of markers" [latitude]="marker.location[0]" [longitude]="marker.location[1]"  [iconUrl]="icon">
+        
+          <agm-marker  *ngFor="let ParkingPlaces of AdminObservable | async" [latitude]="ParkingPlaces.latitude" [longitude]="ParkingPlaces.longitude"  [iconUrl]="icon">
               <agm-info-window>
-                <h3><strong>Location details</strong></h3>
-                <p>You are  kilometers from this point</p>
+                <h3><strong>{{ParkingPlaces.name}}</strong></h3>
+                <p>{{ParkingPlaces.description}}</p><br>
+      
+                <ul style="list-style-type: none">
+                  <li style="color:green"><strong>{{ParkingPlaces.FreeSlots}} Free slots available</strong></li>
+                  <li>{{ParkingPlaces.TotSlots}} total slots</li>
+                  <li style="color: blue">{{ParkingPlaces.Charges}} Rs per hour</li>
+                </ul>
               </agm-info-window>
     
               </agm-marker>
-          <agm-marker  [latitude]="latt" [longitude]="lngg"  [iconUrl]="icon">
-            <agm-info-window>
-              <h3><strong>Location details</strong></h3>
-              <p>You are  kilometers from this point</p>
-            </agm-info-window>
-  
-            </agm-marker>
+
       </agm-map>
 
 </div>
+

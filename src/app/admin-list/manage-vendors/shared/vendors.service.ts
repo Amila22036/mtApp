@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFireDatabase,AngularFireList} from 'angularfire2/database';
-import { Vendor } from './vendors.model';
+import { Vendors } from './vendors.model';
 
 @Injectable()
 export class VendorsService {
   VendorList: AngularFireList<any>;
-  selectedUser: Vendor = new Vendor();
+  selectedUser: Vendors = new Vendors();
 
   constructor(private firebase:AngularFireDatabase) { }
 
   getData(){
-    this.VendorList = this.firebase.list('vendor');
+    this.VendorList = this.firebase.list('Vendors');
     return this.VendorList;
   }
 
-  insertUser(vendor : Vendor){
+  insertUser(vendor : Vendors){
     this.VendorList.push({
       FirstName :vendor.FirstName,
       LastName :vendor.LastName,
@@ -26,7 +26,7 @@ export class VendorsService {
     });
    }
 
-   updateUser(vendor : Vendor){
+   updateUser(vendor : Vendors){
      this.VendorList.update(vendor.$key,{
       FirstName :vendor.FirstName,
       LastName :vendor.LastName,

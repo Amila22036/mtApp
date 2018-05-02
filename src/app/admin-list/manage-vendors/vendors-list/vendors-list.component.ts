@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {VendorsService} from '../shared/vendors.service';
-import {Vendor} from '../shared/vendors.model';
+import {Vendors} from '../shared/vendors.model';
 import { element } from 'protractor';
 import {ToastrService} from 'ngx-toastr';
 
@@ -11,7 +11,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class VendorsListComponent implements OnInit {
 
-  VendorList : Vendor[];
+  VendorList : Vendors[];
   btnText:string;
   constructor(private vendorService: VendorsService,private toastr:ToastrService) { }
 
@@ -22,12 +22,12 @@ export class VendorsListComponent implements OnInit {
       item.forEach(element =>{
         var y=element.payload.toJSON();
         y["$key"] =element.key;
-        this.VendorList.push(y as Vendor);
+        this.VendorList.push(y as Vendors);
       })
     })
   }
 
-  onEdit(Vendor: Vendor){
+  onEdit(Vendor: Vendors){
  
     this.vendorService.selectedUser= Object.assign({},Vendor);
       console.log(Vendor);

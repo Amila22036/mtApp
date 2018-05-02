@@ -1,6 +1,6 @@
-import { Component, OnInit,OnDestroy} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {AgmCoreModule} from '@agm/core';
-import {GeoService} from '../providers/geo.service';
+
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 
@@ -9,7 +9,7 @@ import {Observable} from 'rxjs/Observable';
   templateUrl: './map-page.component.html',
   styleUrls: ['./map-page.component.css']
 })
-export class MapPageComponent implements OnInit , OnDestroy{
+export class MapPageComponent implements OnInit{
 
   lat:number;
   lng:number;
@@ -26,31 +26,26 @@ export class MapPageComponent implements OnInit , OnDestroy{
       width: 30
     }
   };
-  constructor(private geo:GeoService,private db : AngularFireDatabase) { 
-
-  }
-
+  constructor(private db : AngularFireDatabase) {}
+  
+  AdminObservable : Observable<any[]>;
   ngOnInit() {
+   
     this.getUserLocation();
-    this.getUserLocation();
-    this.subscription = this.geo.hits
-    .subscribe(hits => this.markers = hits)  
-    console.log('START OF MARKERS '+this.markers+' ENDOF MARKERS');
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe()
+    this.AdminObservable = this.getAdmins('/ParkingPlaces');
   }
 
 
+
+  getAdmins(listpath):Observable<any[]>{
+    return this.db.list(listpath).valueChanges();
+  }
 
   private getUserLocation(){
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(Position => {
         this.lat=Position.coords.latitude;
         this.lng=Position.coords.longitude;
-
-        this.geo.getLocations(3000,[this.lat ,this.lng]);
         
       });
     }
