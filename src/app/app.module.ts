@@ -13,7 +13,8 @@ import {ChatModule} from './chat/chat.module'
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -42,6 +43,11 @@ import { ManageVendorsComponent } from './admin-list/manage-vendors/manage-vendo
 import { VendorComponent } from './admin-list/manage-vendors/vendor/vendor.component';
 import { VendorsListComponent } from './admin-list/manage-vendors/vendors-list/vendors-list.component';
 import { ManageAdminsComponent } from './admin-list/manage-admins/manage-admins.component';
+import { BusRoutesComponent } from './admin-list/bus-routes/bus-routes.component';
+import { BrouteComponent } from './admin-list/bus-routes/broute/broute.component';
+
+import { BusStandsComponent } from './admin-list/bus-routes/bus-stands/bus-stands.component';
+
 
 
 export const firebaseConfig ={
@@ -72,7 +78,12 @@ export const firebaseConfig ={
     ManageVendorsComponent,
     VendorComponent,
     VendorsListComponent,
-    ManageAdminsComponent
+    ManageAdminsComponent,
+    BusRoutesComponent,
+    BrouteComponent,
+
+    BusStandsComponent,
+ 
 
 
  
@@ -94,7 +105,9 @@ export const firebaseConfig ={
     }),
     ChatModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [AfService,AdminGuard,SubscriberGuard,AdminmapService,AngularFireDatabase,GeoService],
   bootstrap: [AppComponent]

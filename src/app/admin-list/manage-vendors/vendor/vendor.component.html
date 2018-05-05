@@ -25,8 +25,9 @@
     </div>
 <div class="form-group">
   <label>Phone number</label>
-  <input class="form-control" name="PhoneNumber" #PhoneNumber="ngModel" [(ngModel)]="vendorService.selectedUser.PhoneNumber"   minlength=10 maxlength=10 required>
+  <input class="form-control" name="PhoneNumber" #PhoneNumber="ngModel" [(ngModel)]="vendorService.selectedUser.PhoneNumber"   pattern="^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$" required>
 </div> 
+
 <div class="form-group">
 <label>Password</label>
 <input class="form-control" name="Password" #Password="ngModel" [(ngModel)]="vendorService.selectedUser.Password" placeholder="Password" required>

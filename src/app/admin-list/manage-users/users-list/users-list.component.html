@@ -1,4 +1,6 @@
 <h6 class="text-center">Easy travel Users</h6>
+<label>Search</label>
+<input type="text" [(ngModel)]="term">
 <table class="table table-sm table-hover">
  <tr>
     <th>First Name</th>
@@ -7,7 +9,7 @@
     <th>Phone Number</th>
   
   </tr>
-    <tr *ngFor="let User of userList">
+    <tr *ngFor="let User of userList |filter:term |paginate: { itemsPerPage: 6, currentPage: p }">
         <td>{{User.FirstName}}</td>
         <td>{{User.LastName}}</td>
       <td>{{User.Email}}</td>
@@ -22,3 +24,6 @@
         </td>
     </tr>
 </table>
+<div class="text-center">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>

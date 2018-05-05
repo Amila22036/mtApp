@@ -14,7 +14,7 @@ import {ToastrService} from 'ngx-toastr';
 export class UsersListComponent implements OnInit {
   
 userList : User[];
-
+p: number = 1;
   constructor(private userService: UsersService,private toastr:ToastrService) { }
 
   ngOnInit() {

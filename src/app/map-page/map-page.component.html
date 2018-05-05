@@ -1,10 +1,5 @@
 
 
-<div *ngFor="let marker of markers">
-  <h4>{{marker.location[0]}}</h4>
-  <h1>23233</h1>
-
-  </div>
 <div *ngIf="lat && lng">
     <agm-map [latitude]="lat" [longitude]="lng">
        
@@ -19,22 +14,23 @@
         
         </agm-marker>
 
- 
-
-        
-          <agm-marker  *ngFor="let ParkingPlaces of AdminObservable | async" [latitude]="ParkingPlaces.latitude" [longitude]="ParkingPlaces.longitude"  [iconUrl]="icon">
-              <agm-info-window>
-                <h3><strong>{{ParkingPlaces.name}}</strong></h3>
-                <p>{{ParkingPlaces.description}}</p><br>
       
-                <ul style="list-style-type: none">
-                  <li style="color:green"><strong>{{ParkingPlaces.FreeSlots}} Free slots available</strong></li>
-                  <li>{{ParkingPlaces.TotSlots}} total slots</li>
-                  <li style="color: blue">{{ParkingPlaces.Charges}} Rs per hour</li>
-                </ul>
-              </agm-info-window>
-    
-              </agm-marker>
+
+
+              <agm-marker  *ngFor="let ParkingPlaces of AdminObservable | async" [latitude]="ParkingPlaces.latitude" [longitude]="ParkingPlaces.longitude"  [iconUrl]="icon">
+                <agm-info-window>
+                  <h3><strong>{{ParkingPlaces.name}}</strong></h3>
+                  <p>{{ParkingPlaces.description}}</p><br>
+        
+                  <ul style="list-style-type: none">
+                    <li style="color:green"><strong>{{ParkingPlaces.FreeSlots}} Free slots available</strong></li>
+                    <li>{{ParkingPlaces.TotSlots}} total slots</li>
+                    <li style="color: blue">{{ParkingPlaces.Charges}} Rs per hour</li>
+                  </ul>
+         
+                </agm-info-window>
+      
+                </agm-marker>
 
       </agm-map>
 

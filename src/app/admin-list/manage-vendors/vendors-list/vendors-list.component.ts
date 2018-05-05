@@ -13,6 +13,7 @@ export class VendorsListComponent implements OnInit {
 
   VendorList : Vendors[];
   btnText:string;
+  p: number = 1;
   constructor(private vendorService: VendorsService,private toastr:ToastrService) { }
 
   ngOnInit() {

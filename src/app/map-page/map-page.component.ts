@@ -29,15 +29,16 @@ export class MapPageComponent implements OnInit{
   constructor(private db : AngularFireDatabase) {}
   
   AdminObservable : Observable<any[]>;
+
   ngOnInit() {
-   
+    this.AdminObservable = this.getParkingPlaces('/ParkingPlaces');
     this.getUserLocation();
-    this.AdminObservable = this.getAdmins('/ParkingPlaces');
+    
   }
 
 
 
-  getAdmins(listpath):Observable<any[]>{
+  getParkingPlaces(listpath):Observable<any[]>{
     return this.db.list(listpath).valueChanges();
   }
 
@@ -50,7 +51,9 @@ export class MapPageComponent implements OnInit{
       });
     }
 
+
   }
 
+ 
 
 }
