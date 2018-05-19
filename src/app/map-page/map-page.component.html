@@ -13,11 +13,11 @@
           </agm-info-window>
         
         </agm-marker>
-
-      
-
-
-              <agm-marker  *ngFor="let ParkingPlaces of AdminObservable | async" [latitude]="ParkingPlaces.latitude" [longitude]="ParkingPlaces.longitude"  [iconUrl]="icon">
+   
+        <div *ngFor="let ParkingPlaces of prkList ">
+        <div *ngIf= "ParkingPlaces.approve == 'APPROVE'">
+          
+              <agm-marker   [latitude]="ParkingPlaces.latitude" [longitude]="ParkingPlaces.longitude"  [iconUrl]="icon">
                 <agm-info-window>
                   <h3><strong>{{ParkingPlaces.name}}</strong></h3>
                   <p>{{ParkingPlaces.description}}</p><br>
@@ -26,12 +26,16 @@
                     <li style="color:green"><strong>{{ParkingPlaces.FreeSlots}} Free slots available</strong></li>
                     <li>{{ParkingPlaces.TotSlots}} total slots</li>
                     <li style="color: blue">{{ParkingPlaces.Charges}} Rs per hour</li>
+                    <li style="color: blue">{{ParkingPlaces.approve}} app</li>
                   </ul>
-         
+                  <a class="btn" (click)="onDelete(ParkingPlaces.$key)">
+                    <i class="fa fa-trash-o"></i>
+                  </a>
                 </agm-info-window>
       
                 </agm-marker>
-
+</div>
+</div>
       </agm-map>
 
 </div>

@@ -1,0 +1,28 @@
+<form #vendorForm="ngForm" (ngSubmit)="onSubmit(vendorForm)">
+
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="placeService.selectedUser.$key">
+<div class="form-group">
+<label> Place Name</label>
+<input class="form-control" name="name" #name="ngModel" [(ngModel)]="placeService.selectedUser.name" placeholder="First Name" required>
+</div> 
+<div class="form-group">
+<label>location Name</label>
+<input class="form-control" name="location" #location="ngModel" [(ngModel)]="placeService.selectedUser.location" placeholder="Last Name" required>
+</div> 
+<div class="form-group">
+  <label>Approve status</label>
+  <input class="form-control" name="approve" #approve="ngModel" [(ngModel)]="placeService.selectedUser.approve"  placeholder="Type APPROVE " pattern="^[A][P][P][R][O][V][E]$" required>
+  </div> 
+  <div *ngIf="approve.errors?.pattern">
+    <p></p>
+  </div>
+
+<div class="form-group">
+<button class="btn btn-default" type="submit" [disabled]="!vendorForm.valid" >Approve the parking place</button>
+<br/>
+<button class="btn btn-default" type="button" (click)="resetForm(vendorForm)">
+  <i class="fa fa-repeat"></i>
+  Reset</button>
+</div>
+
+</form>

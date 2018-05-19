@@ -47,6 +47,9 @@ import { BusRoutesComponent } from './admin-list/bus-routes/bus-routes.component
 import { BrouteComponent } from './admin-list/bus-routes/broute/broute.component';
 
 import { BusStandsComponent } from './admin-list/bus-routes/bus-stands/bus-stands.component';
+import { ManagePlacesComponent } from './admin-list/manage-places/manage-places.component';
+import { PlaceListComponent } from './admin-list/manage-places/place-list/place-list.component';
+import { PlaceComponent } from './admin-list/manage-places/place/place.component';
 
 
 
@@ -83,6 +86,12 @@ export const firebaseConfig ={
     BrouteComponent,
 
     BusStandsComponent,
+
+    ManagePlacesComponent,
+
+    PlaceListComponent,
+
+    PlaceComponent,
  
 
 

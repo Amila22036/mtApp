@@ -1,8 +1,9 @@
 import { Component, OnInit} from '@angular/core';
 import {AgmCoreModule} from '@agm/core';
-
-import {AngularFireDatabase} from 'angularfire2/database';
+import {ParkingPlace} from '../place.model';
+import {AngularFireDatabase,AngularFireList} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-map-page',
@@ -10,6 +11,7 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./map-page.component.css']
 })
 export class MapPageComponent implements OnInit{
+  prkList : ParkingPlace[];
 
   lat:number;
   lng:number;
@@ -26,13 +28,23 @@ export class MapPageComponent implements OnInit{
       width: 30
     }
   };
-  constructor(private db : AngularFireDatabase) {}
+  constructor(private db : AngularFireDatabase,private toastr:ToastrService) {}
   
   AdminObservable : Observable<any[]>;
-
+  placeList: AngularFireList<any>;
   ngOnInit() {
     this.AdminObservable = this.getParkingPlaces('/ParkingPlaces');
     this.getUserLocation();
+
+    var x= this.getData();
+    x.snapshotChanges().subscribe(item =>{
+      this. prkList=[];
+      item.forEach(element =>{
+        var y=element.payload.toJSON();
+        y["$key"] =element.key;
+        this.prkList.push(y as ParkingPlace);
+      })
+    })
     
   }
 
@@ -40,6 +52,11 @@ export class MapPageComponent implements OnInit{
 
   getParkingPlaces(listpath):Observable<any[]>{
     return this.db.list(listpath).valueChanges();
+  }
+
+  getData(){
+    this.placeList = this.db.list('ParkingPlaces');
+    return this.placeList;
   }
 
   private getUserLocation(){
@@ -54,6 +71,17 @@ export class MapPageComponent implements OnInit{
 
   }
 
+  onDelete(key : string){
+    if(confirm('Do you really want to delete this record?')==true)
+    {
+      this.deleteUser(key);
+      this.toastr.warning("Deleted successfully","User Register");
+    }
+  }
+
+  deleteUser($key:string){
+    this.placeList.remove($key);
+  }
  
 
 }

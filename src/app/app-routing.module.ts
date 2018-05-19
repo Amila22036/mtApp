@@ -13,6 +13,7 @@ import {ManageUsersComponent} from './admin-list/manage-users/manage-users.compo
 import  {AdminMapComponent} from './admin-list/admin-map/admin-map.component';
 import { ManageVendorsComponent } from './admin-list/manage-vendors/manage-vendors.component';
 import {BusRoutesComponent} from './admin-list/bus-routes/bus-routes.component';
+import {ManagePlacesComponent} from './admin-list/manage-places/manage-places.component';
 
 const routers: Routes =[
     {path:' ',component:AppComponent},
@@ -24,7 +25,8 @@ const routers: Routes =[
     {path:'Manage-users',component:ManageUsersComponent,canActivate:[AdminGuard]},
     {path:'Admin-map',component:AdminMapComponent,canActivate:[AdminGuard]},
     {path:'Manage-vendors',component:ManageVendorsComponent,canActivate:[AdminGuard]},
-    {path:'bus-routes',component:BusRoutesComponent,canActivate:[AdminGuard]}
+    {path:'bus-routes',component:BusRoutesComponent,canActivate:[AdminGuard]},
+    {path:'Manage-places',component:ManagePlacesComponent,canActivate:[AdminGuard]}
 ]
 @NgModule({
     imports:[

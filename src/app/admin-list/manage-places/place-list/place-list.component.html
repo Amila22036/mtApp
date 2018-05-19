@@ -1,0 +1,38 @@
+
+<label>Search</label>
+<input type="text" [(ngModel)]="term">
+<table class="table table-sm table-hover">
+ <tr>
+    <th>Place Name</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Total slots</th>
+    <th>Free slots</th>
+    <th>Location</th>
+    <th>Charge per hour</th>
+    <th>Approve status</th>
+  
+  </tr>
+    <tr *ngFor="let Place of PlaceList |filter:term |paginate: { itemsPerPage: 6, currentPage: p }">
+        <td>{{Place.name}}</td>
+        <td>{{Place.category}}</td>
+        <td>{{Place.description}}</td>
+      <td>{{Place.TotSlots}}</td>
+      <td>{{Place.FreeSlots}}</td>
+      <td>{{Place.location}}</td>
+      <td>{{Place.FreeSlots}}</td>
+      <td>{{Place.approve}}</td>
+      <td>
+        <a class="btn" (click)="onEdit(Place)">
+          <i class="fa fa-check-circle-o" style="font-size:36px;color:green" id="button"></i>
+        </a>
+        <a class="btn" (click)="onDelete(Place.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+        </td>
+    </tr>
+
+</table>
+<div class="text-center">
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

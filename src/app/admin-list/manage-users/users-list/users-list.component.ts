@@ -38,7 +38,7 @@ p: number = 1;
     if(confirm('Do you really want to delete this record?')==true)
     {
       this.userService.deleteUser(key);
-      this.toastr.warning("Deleted successfully","User Register");
+      this.toastr.warning("Deleted successfully","Parking place");
     }
   }
 
