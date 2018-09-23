@@ -75,7 +75,7 @@ export class MapPageComponent implements OnInit{
     if(confirm('Do you really want to delete this record?')==true)
     {
       this.deleteUser(key);
-      this.toastr.warning("Deleted successfully","User Register");
+      this.toastr.warning("Deleted successfully","parking place Register");
     }
   }
 

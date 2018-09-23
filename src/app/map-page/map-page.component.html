@@ -15,7 +15,7 @@
         </agm-marker>
    
         <div *ngFor="let ParkingPlaces of prkList ">
-        <div *ngIf= "ParkingPlaces.approve == 'APPROVE'">
+        <div *ngIf= "ParkingPlaces.approve == 'true'">
           
               <agm-marker   [latitude]="ParkingPlaces.latitude" [longitude]="ParkingPlaces.longitude"  [iconUrl]="icon">
                 <agm-info-window>
@@ -25,8 +25,8 @@
                   <ul style="list-style-type: none">
                     <li style="color:green"><strong>{{ParkingPlaces.FreeSlots}} Free slots available</strong></li>
                     <li>{{ParkingPlaces.TotSlots}} total slots</li>
-                    <li style="color: blue">{{ParkingPlaces.Charges}} Rs per hour</li>
-                    <li style="color: blue">{{ParkingPlaces.approve}} app</li>
+                    <li style="color: blue">{{ParkingPlaces.HvCharges}} Rs per hour</li>
+                   
                   </ul>
                   <a class="btn" (click)="onDelete(ParkingPlaces.$key)">
                     <i class="fa fa-trash-o"></i>

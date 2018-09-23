@@ -3,7 +3,7 @@ export class ParkingPlace {
     Charges :number;
     FreeSlots:number;
     TotSlots:number;   
-    approve:string; 
+    approve:boolean; 
     category:string;
     description:string;
     latitude:number;

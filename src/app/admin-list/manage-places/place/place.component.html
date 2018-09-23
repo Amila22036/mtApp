@@ -3,19 +3,17 @@
   <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="placeService.selectedUser.$key">
 <div class="form-group">
 <label> Place Name</label>
-<input class="form-control" name="name" #name="ngModel" [(ngModel)]="placeService.selectedUser.name" placeholder="First Name" required>
+<input class="form-control" name="name" #name="ngModel"   [(ngModel)]="placeService.selectedUser.name" placeholder="First Name" disabled required>
 </div> 
 <div class="form-group">
 <label>location Name</label>
-<input class="form-control" name="location" #location="ngModel" [(ngModel)]="placeService.selectedUser.location" placeholder="Last Name" required>
+<input class="form-control" name="location" #location="ngModel" [(ngModel)]="placeService.selectedUser.location" placeholder="Last Name" disabled required>
 </div> 
 <div class="form-group">
   <label>Approve status</label>
-  <input class="form-control" name="approve" #approve="ngModel" [(ngModel)]="placeService.selectedUser.approve"  placeholder="Type APPROVE " pattern="^[A][P][P][R][O][V][E]$" required>
+  <input class="form-control" name="approve" #approve="ngModel" [(ngModel)]="placeService.selectedUser.approve"  placeholder="Type true to Approve " pattern="^[t][r][u][e]$" required>
   </div> 
-  <div *ngIf="approve.errors?.pattern">
-    <p></p>
-  </div>
+
 
 <div class="form-group">
 <button class="btn btn-default" type="submit" [disabled]="!vendorForm.valid" >Approve the parking place</button>

@@ -22,6 +22,10 @@ import { AdminListComponent } from './admin-list/admin-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 
 import { AfService } from './providers/af.service';
+import {UsersService} from './admin-list/manage-users/shared/users.service';
+import {VendorsService} from './admin-list/manage-vendors/shared/vendors.service';
+import {PlacesService} from './admin-list/manage-places/shared/places.service';
+
 import {AngularFirestore,AngularFirestoreModule} from 'angularfire2/firestore';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { ArticalPageComponent } from './artical-page/artical-page.component';
@@ -43,15 +47,17 @@ import { ManageVendorsComponent } from './admin-list/manage-vendors/manage-vendo
 import { VendorComponent } from './admin-list/manage-vendors/vendor/vendor.component';
 import { VendorsListComponent } from './admin-list/manage-vendors/vendors-list/vendors-list.component';
 import { ManageAdminsComponent } from './admin-list/manage-admins/manage-admins.component';
-import { BusRoutesComponent } from './admin-list/bus-routes/bus-routes.component';
+import {AddplaceComponent} from './admin-list/addplace/addplace.component';
 import { BrouteComponent } from './admin-list/bus-routes/broute/broute.component';
+import {AddplacesComponent} from './admin-list/addplace/addplaces/addplaces.component';
 
+import {AddplaceListComponent} from './admin-list/addplace/addplace-list/addplace-list.component';
 import { BusStandsComponent } from './admin-list/bus-routes/bus-stands/bus-stands.component';
 import { ManagePlacesComponent } from './admin-list/manage-places/manage-places.component';
 import { PlaceListComponent } from './admin-list/manage-places/place-list/place-list.component';
 import { PlaceComponent } from './admin-list/manage-places/place/place.component';
-
-
+import {ServComponent} from './admin-list/addplace/serv/serv.component';
+import {GoogleMapComponent} from './admin-list/google-map/google-map.component';
 
 export const firebaseConfig ={
     apiKey: "AIzaSyCr8HC0YDcfxIJJELeJ4OH2QEYIH_MxGpI",
@@ -82,21 +88,17 @@ export const firebaseConfig ={
     VendorComponent,
     VendorsListComponent,
     ManageAdminsComponent,
-    BusRoutesComponent,
+    AddplaceComponent,
     BrouteComponent,
-
     BusStandsComponent,
-
     ManagePlacesComponent,
-
     PlaceListComponent,
-
     PlaceComponent,
+    AddplaceListComponent,
+    AddplacesComponent,
+    ServComponent,
+    GoogleMapComponent
  
-
-
- 
-
   ],
   imports: [
     BrowserModule,
@@ -118,7 +120,15 @@ export const firebaseConfig ={
     Ng2SearchPipeModule,
     NgxPaginationModule
   ],
-  providers: [AfService,AdminGuard,SubscriberGuard,AdminmapService,AngularFireDatabase,GeoService],
+  providers: [AfService,
+    AdminGuard,
+    SubscriberGuard,
+    AdminmapService,
+    AngularFireDatabase,GeoService,
+    UsersService,
+    VendorsService,
+    PlacesService,
+    GeoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

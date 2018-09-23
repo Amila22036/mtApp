@@ -1,5 +1,70 @@
 
 <app-admin-navbar></app-admin-navbar>
+<br/>
+<br/>
+<div class="container-fluid">
+		<div class="row">
+				<div class="col-md-3">
+						<div class="card">
+								<figure class="front">
+								  <img src="https://firebasestorage.googleapis.com/v0/b/pdmpark-22036.appspot.com/o/User_icon.png?alt=media&token=5ba400bc-5a73-4113-af7a-f898b720f547" alt="front">
+								  <div class="caption">
+									<h2>No of<span>Users</span></h2>
+									<div *ngFor="let x of userList">
+									<p>{{userList.length}} registerd users.</p>
+										</div>
+							  </div>			
+								</figure>
+							
+							  </div>
+				</div>
+				<div class="col-md-3">
+						<div class="card">
+								<figure class="front">
+								  <img src="https://firebasestorage.googleapis.com/v0/b/pdmpark-22036.appspot.com/o/Vendor.png?alt=media&token=5d73244b-2a5b-49b0-b564-8cfbf4c67178" alt="front">
+								  <div class="caption">
+									<h2>no of <span>vendors</span></h2>
+									<div *ngFor="let v of VendorList">
+									<p>{{VendorList.length}} registerd vendors</p>
+									</div>
+								  </div>			
+								</figure>
+							
+							  </div>
+				</div>
+				<div class="col-md-3">
+						<div class="card">
+								<figure class="front">
+								  <img src="https://firebasestorage.googleapis.com/v0/b/pdmpark-22036.appspot.com/o/parking-icon.png?alt=media&token=48d82112-c123-4fce-a722-2e94d4e5ed1b" alt="front">
+								  <div class="caption">
+									<h2>no of <span>places</span></h2>
+									<div *ngFor="let p of PlaceList">
+									<p>{{PlaceList.length}} parking places</p>
+									</div>
+								  </div>			
+								</figure>
+							
+							  </div>
+				</div>
+				<div class="col-md-3">
+						<div class="card">
+								<figure class="front">
+								  <img src="https://firebasestorage.googleapis.com/v0/b/pdmpark-22036.appspot.com/o/Admin.png?alt=media&token=4a640d4e-b2ca-4192-8981-637cfcdb1e99" alt="front">
+								  <div class="caption">
+									<h2>no of <span>admins</span></h2>
+									<p> 3 admins</p>
+									
+								  </div>			
+								</figure>
+							
+							  </div>
+				</div>
+
+			  </div>
+
+</div>
+
+
 
 <div class="wrapper">
 		<div class="line line1">

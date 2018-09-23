@@ -10,9 +10,10 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./place-list.component.css']
 })
 export class PlaceListComponent implements OnInit {
-
+  term='';
   PlaceList : ParkingPlace[];
-  constructor(private placeService: PlacesService,private toastr:ToastrService) { }
+  p: number = 1;
+  constructor(public placeService: PlacesService,private toastr:ToastrService) { }
 
   ngOnInit() {
     var x= this.placeService.getData();
@@ -36,7 +37,7 @@ export class PlaceListComponent implements OnInit {
     if(confirm('Do you really want to delete this record?')==true)
     {
       this.placeService.deleteUser(key);
-      this.toastr.warning("Deleted successfully","User Register");
+      this.toastr.warning("Deleted successfully","Parking place Register");
     }
   }
 

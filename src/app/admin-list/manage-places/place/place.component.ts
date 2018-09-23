@@ -10,7 +10,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class PlaceComponent implements OnInit {
 
-  constructor(private placeService : PlacesService,private toastr:ToastrService) { }
+  constructor(public placeService : PlacesService,private toastr:ToastrService) { }
 
   ngOnInit() {
     this.placeService.getData();
@@ -23,13 +23,13 @@ export class PlaceComponent implements OnInit {
     {
   
      
-       this.toastr.success('Submitted Successfully','User Register');
+       this.toastr.success('Submitted Successfully','parking place Register');
     }
     else
     {
  
       this.placeService.updateUser(vendorForm.value);
-      this.toastr.success('Updated Successfully','User Register');
+      this.toastr.success('Aproved successfully','parking place Register');
     }
       this.resetForm(vendorForm);
       
@@ -42,7 +42,7 @@ export class PlaceComponent implements OnInit {
         Charges :0,
         FreeSlots:0,
         TotSlots:0,   
-        approve:'', 
+        approve:false, 
         category:'',
         description:'',
         latitude:0,

@@ -1,0 +1,33 @@
+
+<form #addplaceForm="ngForm" (ngSubmit)="onSubmit(addplaceForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="addplaceService.selectedAddplace.$key">
+<div class="form-group">
+  <label>Bus Stand</label>
+  <input class="form-control" name="busstandname" #busstandname="ngModel" [(ngModel)]="addplaceService.selectedAddplace.busstandname" placeholder="Bus Stand" required>
+</div>
+<div class="form-group">
+  <label>Current City</label>
+  <input class="form-control" name="currentcity" #currentcity="ngModel" [(ngModel)]="addplaceService.selectedAddplace.currentcity" placeholder="Current City" required>
+</div>
+<div class="form-group">
+  <label>Location</label>
+  <input class="form-control" name="location" #location="ngModel" [(ngModel)]="addplaceService.selectedAddplace.location" placeholder="Location" required>
+</div>
+<div class="form-group">
+  <label>Phone Number</label>
+  <input class="form-control" name="phonenumber" #phonenumber="ngModel" [(ngModel)]="addplaceService.selectedAddplace.phonenumber" placeholder="Phone Number" required>
+</div>
+<div class="form-group">
+  <label>Discription</label>
+  <input class="form-control" name="discription" #discription="ngModel" [(ngModel)]="addplaceService.selectedAddplace.discription" placeholder="Discription" required>
+</div>
+
+<div class="form-group">
+  <button class="btn btn-default" type="submit" [disabled]="!addplaceForm.valid">
+    <i class="fa fa-floppy-o"></i>
+     Submit</button>
+  <button class="btn btn-default" type="button" (click)="resetForm(addplaceForm)">
+    <i class="fa fa-repeat"></i>
+     Reset</button>
+</div>
+</form>

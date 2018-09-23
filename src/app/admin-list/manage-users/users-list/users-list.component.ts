@@ -15,7 +15,8 @@ export class UsersListComponent implements OnInit {
   
 userList : User[];
 p: number = 1;
-  constructor(private userService: UsersService,private toastr:ToastrService) { }
+term='';
+  constructor(public userService: UsersService,private toastr:ToastrService) { }
 
   ngOnInit() {
     var x= this.userService.getData();
@@ -38,7 +39,7 @@ p: number = 1;
     if(confirm('Do you really want to delete this record?')==true)
     {
       this.userService.deleteUser(key);
-      this.toastr.warning("Deleted successfully","Parking place");
+      this.toastr.warning("Deleted successfully","User records");
     }
   }
 

@@ -11,7 +11,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private userService : UsersService,private toastr:ToastrService) { }
+  constructor(public userService : UsersService,private toastr:ToastrService) { }
 
   ngOnInit() {
     this.userService.getData();

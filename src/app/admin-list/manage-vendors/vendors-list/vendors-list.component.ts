@@ -14,7 +14,8 @@ export class VendorsListComponent implements OnInit {
   VendorList : Vendors[];
   btnText:string;
   p: number = 1;
-  constructor(private vendorService: VendorsService,private toastr:ToastrService) { }
+  term='';
+  constructor(public vendorService: VendorsService,private toastr:ToastrService) { }
 
   ngOnInit() {
     var x= this.vendorService.getData();
@@ -38,7 +39,7 @@ export class VendorsListComponent implements OnInit {
     if(confirm('Do you really want to delete this record?')==true)
     {
       this.vendorService.deleteUser(key);
-      this.toastr.warning("Deleted successfully","User Register");
+      this.toastr.warning("Deleted successfully","Vendor Register");
     }
   }
 

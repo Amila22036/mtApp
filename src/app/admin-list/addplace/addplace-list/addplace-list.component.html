@@ -1,0 +1,26 @@
+<h6 class="text-center">Add Place</h6><br/>
+<table class="table table-sm table-hover">
+    <tr>
+        <th>Bus Stand</th>
+        <th>Current City</th>
+        <th>Location</th>
+        <th>Phone Number</th>
+        <th>Discription</th>
+      </tr>
+
+  <tr *ngFor="let Addplaces of AddplaceList">
+      <td>{{Addplaces.busstandname}}</td>
+      <td>{{Addplaces.currentcity}}</td>
+      <td>{{Addplaces.location}}</td>
+      <td>{{Addplaces.phonenumber}}</td>
+      <td>{{Addplaces.discription}}</td>
+      <td>
+        <a class="btn" (click)="onEdit(Addplaces)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn" (click)="onDelete(Addplaces.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+  </tr>
+</table>

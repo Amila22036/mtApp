@@ -2,6 +2,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,800);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,700);
 
 html {
     position: relative;
